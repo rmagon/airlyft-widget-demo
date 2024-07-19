@@ -1,3 +1,6 @@
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/981f9634-ff5b-4da3-b2b6-514f664eac8f/deploy-status)](https://app.netlify.com/sites/airlyft-widget-demo/deploys)
+
 # Nuxt 3 Minimal Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
