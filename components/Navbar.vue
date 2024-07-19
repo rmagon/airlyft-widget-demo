@@ -1,46 +1,197 @@
 <template>
-    <Disclosure as="nav" class="bg-gray-800" v-slot="{ open }">
-      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div class="relative flex h-16 items-center justify-between">
-          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-            <!-- Mobile menu button-->
-            <DisclosureButton class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span class="absolute -inset-0.5" />
-              <span class="sr-only">Open main menu</span>
-              <Bars3Icon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
-              <XMarkIcon v-else class="block h-6 w-6" aria-hidden="true" />
-            </DisclosureButton>
-          </div>
-          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div class="flex flex-shrink-0 items-center">
-              <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
-            </div>
-            <div class="hidden sm:ml-6 sm:block">
-              <div class="flex space-x-4">
-                <NuxtLink v-for="item in navigation" :key="item.name" :to="item.href" :class="[route.path==item.href ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'rounded-md px-3 py-2 text-sm font-medium']" :aria-current="route.path==item.href ? 'page' : undefined">{{ item.name }}</NuxtLink>
-              </div>
-            </div>
-          </div>
-        </div>
+  <header class="bg-inherit z-10 fixed text-white backdrop-blur">
+    <nav class="mx-auto w-dvw flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <NuxtLink to="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">AirLyft.One</span>
+          <img class="h-8 w-auto" src="../public/logo.png" alt="AirLyft.One" />
+        </NuxtLink>
       </div>
-  
-      <DisclosurePanel class="sm:hidden">
-        <div class="space-y-1 px-2 pb-3 pt-2">
-          <DisclosureButton v-for="item in navigation" :key="item.name" as="a" :href="item.href" :class="[route.path==item.href ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'block rounded-md px-3 py-2 text-base font-medium']" :aria-current="route.path==item.href ? 'page' : undefined">{{ item.name }}</DisclosureButton>
-        </div>
-      </DisclosurePanel>
-    </Disclosure>
-  </template>
-  
-  <script setup>
-  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-  import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white" @click="mobileMenuOpen = true">
+          <span class="sr-only">Open main menu</span>
+          <Bars3Icon class="h-6 w-6" aria-hidden="true" />
+        </button>
+      </div>
+      <PopoverGroup class="hidden lg:flex lg:gap-x-12">
+        <Popover class="relative">
+          <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none">
+            Sidebar
+            <ChevronDownIcon class="h-5 w-5 flex-none" aria-hidden="true" />
+          </PopoverButton>
 
-  const route = useRoute()  
-  
-  const navigation = [
-    { name: 'Sidebar', href: '/sidebar' },
-    { name: 'Inline', href: '/inline' },
-    { name: 'Popup', href: '/popup' }
-  ]
-  </script>
+          <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
+            <PopoverPanel class="absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-lg bg-sky-900 shadow-lg ring-1 ring-gray-900/5">
+              <div class="p-4">
+                <div v-for="item in sidebar" :key="item.name" class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg">
+                    <component :is="item.icon" class="h-6 w-6 text-white group-hover:text-indigo-400" aria-hidden="true" />
+                  </div>
+                  <div class="flex-auto hover:text-indigo-400">
+                    <NuxtLink :to="item.href" class=" block font-semibold" :aria-current="route.path == item.href ? 'page' : undefined">
+                      {{ item.name }}
+                      <span class="absolute inset-0" />
+                    </NuxtLink>
+                    <p class="mt-1 text-gray-300">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </PopoverPanel>
+          </transition>
+        </Popover>
+
+        <Popover class="relative">
+          <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none">
+            Popup
+            <ChevronDownIcon class="h-5 w-5 flex-none" aria-hidden="true" />
+          </PopoverButton>
+
+          <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
+            <PopoverPanel class="absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-lg bg-sky-900 shadow-lg ring-1 ring-gray-900/5">
+              <div class="p-4">
+                <div v-for="item in popup" :key="item.name" class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg">
+                    <component :is="item.icon" class="h-6 w-6 text-white group-hover:text-indigo-400" aria-hidden="true" />
+                  </div>
+                  <div class="flex-auto hover:text-indigo-400">
+                    <NuxtLink :to="item.href" class=" block font-semibold" :aria-current="route.path == item.href ? 'page' : undefined">
+                      {{ item.name }}
+                      <span class="absolute inset-0" />
+                    </NuxtLink>
+                    <p class="mt-1 text-gray-300">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </PopoverPanel>
+          </transition>
+        </Popover>
+
+        <Popover class="relative">
+          <PopoverButton class="flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none text-gray-400" disabled="">
+            Inline
+            <ChevronDownIcon class="h-5 w-5 flex-none" aria-hidden="true" />
+          </PopoverButton>
+
+          <transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-1" enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150" leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-1">
+            <PopoverPanel class="absolute right-0 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-lg bg-sky-900 shadow-lg ring-1 ring-gray-900/5">
+              <div class="p-4">
+                <div v-for="item in inline" :key="item.name" class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg">
+                    <component :is="item.icon" class="h-6 w-6 text-white group-hover:text-indigo-400" aria-hidden="true" />
+                  </div>
+                  <div class="flex-auto hover:text-indigo-400">
+                    <NuxtLink :to="item.href" class=" block font-semibold" :aria-current="route.path == item.href ? 'page' : undefined">
+                      {{ item.name }}
+                      <span class="absolute inset-0" />
+                    </NuxtLink>
+                    <p class="mt-1 text-gray-300">{{ item.description }}</p>
+                  </div>
+                </div>
+              </div>
+            </PopoverPanel>
+          </transition>
+        </Popover>
+      </PopoverGroup>
+    </nav>
+    <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
+      <div class="fixed inset-0 z-10" />
+      <DialogPanel class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-sky-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          <NuxtLink to="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">AirLyft.One</span>
+            <img class="h-8 w-auto" src="../public/logo.png" alt="AirLyft.One" />
+          </NuxtLink>
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-white" @click="mobileMenuOpen = false">
+            <span class="sr-only">Close menu</span>
+            <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6 text-white">
+              <Disclosure as="div" class="-mx-3" v-slot="{ open }">
+                <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7">
+                  Sidebar
+                  <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
+                </DisclosureButton>
+                <DisclosurePanel class="mt-2 space-y-2">
+                  <DisclosureButton v-for="item in sidebar" :key="item.name" as="a" :href="item.href" class="text-white block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7" :aria-current="route.path == item.href ? 'page' : undefined">{{ item.name }}</DisclosureButton>
+                </DisclosurePanel>
+              </Disclosure>
+              <Disclosure as="div" class="-mx-3" v-slot="{ open }">
+                <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7">
+                  Popup
+                  <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
+                </DisclosureButton>
+                <DisclosurePanel class="mt-2 space-y-2">
+                  <DisclosureButton v-for="item in popup" :key="item.name" as="a" :href="item.href" class="text-white block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7" :aria-current="route.path == item.href ? 'page' : undefined">{{ item.name }}</DisclosureButton>
+                </DisclosurePanel>
+              </Disclosure>
+              <Disclosure as="div" class="-mx-3" v-slot="{ open }">
+                <DisclosureButton class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-400" disabled="">
+                  Inline
+                  <ChevronDownIcon :class="[open ? 'rotate-180' : '', 'h-5 w-5 flex-none']" aria-hidden="true" />
+                </DisclosureButton>
+                <DisclosurePanel class="mt-2 space-y-2">
+                  <DisclosureButton v-for="item in inline" :key="item.name" as="a" :href="item.href" class="text-white block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7" :aria-current="route.path == item.href ? 'page' : undefined">{{ item.name }}</DisclosureButton>
+                </DisclosurePanel>
+              </Disclosure>
+            </div>
+          </div>
+        </div>
+      </DialogPanel>
+    </Dialog>
+  </header>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+import {
+  Dialog,
+  DialogPanel,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+  Popover,
+  PopoverButton,
+  PopoverGroup,
+  PopoverPanel,
+} from '@headlessui/vue'
+import {
+  Bars3Icon,
+  ChartPieIcon,
+  CursorArrowRaysIcon,
+  FingerPrintIcon,
+  SquaresPlusIcon,
+  XMarkIcon,
+} from '@heroicons/vue/24/outline'
+import { ChevronDownIcon } from '@heroicons/vue/20/solid'
+
+const route = useRoute()
+
+const sidebar = [
+  { name: 'Simple Sidebar', description: 'Description about simple sidebar', href: '/sidebar/simple', icon: ChartPieIcon },
+  { name: 'Open Quest Directly', description: 'Description about open quest directly', href: '/sidebar/open-quest-directly', icon: CursorArrowRaysIcon },
+  { name: 'Async Script Load', description: 'Description about async script load', href: '/sidebar/async-script-load', icon: SquaresPlusIcon },
+  // { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '/sidebar/hide-xp-cfuel', icon: FingerPrintIcon },
+  // { name: 'Silent Login', description: 'Description about silent login', href: '/sidebar/silent-login', icon: FingerPrintIcon },
+]
+
+const popup = [
+  { name: 'Simple Popup', description: 'Description about simple popup', href: '/popup/simple', icon: ChartPieIcon },
+  { name: 'Open Quest Directly', description: 'Description about open quest directly', href: '/popup/open-quest-directly', icon: CursorArrowRaysIcon },
+  { name: 'Async Script Load', description: 'Description about async script load', href: '/popup/async-script-load', icon: SquaresPlusIcon },
+  // { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '/popup/hide-xp-cfuel', icon: FingerPrintIcon },
+  // { name: 'Silent Login', description: 'Description about silent login', href: '/popup/silent-login', icon: FingerPrintIcon },
+]
+
+const inline = [
+  { name: 'Simple Inline', description: 'Description about simple inline', href: '/inline/simple', icon: ChartPieIcon },
+  { name: 'Open Quest Directly', description: 'Description about open quest directly', href: '#', icon: CursorArrowRaysIcon },
+  { name: 'Async Script Load', description: 'Description about async script load', href: '#', icon: SquaresPlusIcon },
+  { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '#', icon: FingerPrintIcon },
+  { name: 'Silent Login', description: 'Description about silent login', href: '/inline/silent-login', icon: FingerPrintIcon },
+]
+
+const mobileMenuOpen = ref(false)
+</script>
