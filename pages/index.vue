@@ -48,6 +48,7 @@
       </div>
     </div>
   </div>
+  <Cards />
 </template>
 
 <script>
