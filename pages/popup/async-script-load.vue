@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="h-dvh flex items-center justify-center text-white bg-blue-950">
+        <div class="h-dvh overflow-hidden flex items-center justify-center text-white bg-blue-950">
             <div class="relative isolate px-6 pt-14 lg:px-8">
                 <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
                     aria-hidden="true">
@@ -57,7 +57,7 @@ export default {
                 widget.createModal({
                     style: {
                         button: {
-                            backgroundColor: '#693306',
+                            boxShadow: '0px 0px 20px 0px #000',
                         }
                     }
                 });
@@ -70,7 +70,6 @@ export default {
             const widgetContainer = document.querySelector('.FBgbKZ9lJCatEIU4pCs7');
             if (widgetContainer) {
                 widgetContainer.remove();
-                console.log('Widget removed');
             }
         }
     }

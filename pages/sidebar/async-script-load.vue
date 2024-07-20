@@ -57,7 +57,7 @@ export default {
                 widget.createSidebar({
                     style: {
                         button: {
-                            backgroundColor: '#784804',
+                            boxShadow: '0px 0px 20px 0px #000',
                         }
                     }
                 });

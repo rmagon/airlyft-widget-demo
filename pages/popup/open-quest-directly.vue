@@ -53,7 +53,7 @@ export default {
           const instance = await widget.createModal({
             style: {
               button: {
-                backgroundColor: '#5F2B05',
+                boxShadow: '0px 0px 20px 0px #000',
               }
             }
           });
@@ -69,7 +69,6 @@ export default {
       const widgetContainer = document.querySelector('.FBgbKZ9lJCatEIU4pCs7');
       if (widgetContainer) {
         widgetContainer.remove();
-        console.log('Widget removed');
       }
     }
   }

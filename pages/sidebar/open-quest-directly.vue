@@ -53,7 +53,7 @@ export default {
           const instance = await widget.createSidebar({
             style: {
               button: {
-                backgroundColor: '#594C09',
+                boxShadow: '0px 0px 20px 0px #000',
               }
             }
           });
@@ -69,8 +69,6 @@ export default {
       const widgetContainer = document.querySelector('.FBgbKZ9lJCatEIU4pCs7');
       if (widgetContainer) {
         widgetContainer.remove();
-        window.AirlyftWidget = null;
-        console.log('Widget removed');
       }
     }
   }
