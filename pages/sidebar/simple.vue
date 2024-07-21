@@ -34,12 +34,14 @@ useHead({
 </script>
 
 <script>
+import { removeWidgetScript, initializeWidgetInstance } from '@/utils'
+
 export default {
   mounted() {
     this.loadWidgetScript();
   },
   beforeUnmount() {
-    this.removeWidgetScript();
+    removeWidgetScript();
   },
   methods: {
     loadWidgetScript() {
@@ -48,26 +50,21 @@ export default {
       script.onload = async () => {
         try {
           const widget = await window.AirlyftWidget("96affc32-6ce0-4654-b406-03a76bd75bd6");
-          await widget.createSidebar({
+          const instance = await widget.createSidebar({
             style: {
               button: {
                 boxShadow: '0px 0px 20px 0px #000',
               }
             }
           });
+
+          initializeWidgetInstance(instance);
         } catch (err) {
           console.error(err);
         }
       };
       document.head.appendChild(script);
     },
-    removeWidgetScript() {
-      // Remove widget elements
-      const widgetContainer = document.querySelector('.FBgbKZ9lJCatEIU4pCs7');
-      if (widgetContainer) {
-        widgetContainer.remove();
-      }
-    }
   }
 }
 </script>

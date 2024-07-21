@@ -32,12 +32,14 @@ useHead({
 </script>
 
 <script>
+import { removeWidgetScript, initializeWidgetInstance } from '@/utils'
+
 export default {
     mounted() {
         this.loadWidgetScript();
     },
     beforeUnmount() {
-        this.removeWidget();
+        removeWidgetScript();
     },
     methods: {
         loadWidgetScript() {
@@ -54,24 +56,19 @@ export default {
                 const widget = await window.AirlyftWidget(
                     "aac9db6e-297e-4e4a-90fb-4d0fdf98aa56"
                 );
-                widget.createModal({
+                const instance = await widget.createModal({
                     style: {
                         button: {
                             boxShadow: '0px 0px 20px 0px #000',
                         }
                     }
                 });
+
+                initializeWidgetInstance(instance);
             } catch (err) {
                 console.error(err);
             }
         },
-        removeWidget() {
-            // Remove widget elements
-            const widgetContainer = document.querySelector('.FBgbKZ9lJCatEIU4pCs7');
-            if (widgetContainer) {
-                widgetContainer.remove();
-            }
-        }
     }
 }
 </script>

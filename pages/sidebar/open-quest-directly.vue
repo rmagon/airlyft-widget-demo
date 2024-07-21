@@ -34,12 +34,14 @@ useHead({
 </script>
 
 <script>
+import { removeWidgetScript, initializeWidgetInstance } from '@/utils'
+
 export default {
   mounted() {
     this.loadWidgetScript();
   },
   beforeUnmount() {
-    this.removeWidget();
+    removeWidgetScript();
   },
   methods: {
     loadWidgetScript() {
@@ -57,6 +59,7 @@ export default {
               }
             }
           });
+          initializeWidgetInstance(instance);
           widget.openSpecificTask(instance, "38657521-db0c-430a-9450-1b52f38e2ca2");
         } catch (err) {
           console.error(err);
@@ -64,13 +67,6 @@ export default {
       };
       document.head.appendChild(script);
     },
-    removeWidget() {
-      // Remove widget elements
-      const widgetContainer = document.querySelector('.FBgbKZ9lJCatEIU4pCs7');
-      if (widgetContainer) {
-        widgetContainer.remove();
-      }
-    }
   }
 }
 </script>
