@@ -1,31 +1,32 @@
 <template>
-  <div class="">
-    <div class="h-dvh overflow-hidden flex items-center justify-center text-white bg-purple-950">
-      <div class="relative isolate px-6 pt-14 lg:px-8">
-        <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-          aria-hidden="true">
-          <div
-            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
-            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
-        </div>
-        <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-          <div class="text-center">
-            <h1 class="text-4xl font-bold tracking-tight text-white sm:text-6xl">Simple Sidebar</h1>
-            <p class="mt-6 text-lg leading-8 text-gray-400">Click on the button in the lower right corner of the screen
-              to see how the Simple Sidebar Widget would work.</p>
-          </div>
-        </div>
-        <div
-          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-          aria-hidden="true">
-          <div
-            class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
-            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" />
-        </div>
+  <div class="bg-purple-custom">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+      <div class="text-center mt-10">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+          class="w-16 lg:w-24 mx-auto my-5 text-purple-400">
+          <path fill-rule="evenodd"
+            d="M9.315 7.584C12.195 3.883 16.695 1.5 21.75 1.5a.75.75 0 0 1 .75.75c0 5.056-2.383 9.555-6.084 12.436A6.75 6.75 0 0 1 9.75 22.5a.75.75 0 0 1-.75-.75v-4.131A15.838 15.838 0 0 1 6.382 15H2.25a.75.75 0 0 1-.75-.75 6.75 6.75 0 0 1 7.815-6.666ZM15 6.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"
+            clip-rule="evenodd" />
+          <path
+            d="M5.26 17.242a.75.75 0 1 0-.897-1.203 5.243 5.243 0 0 0-2.05 5.022.75.75 0 0 0 .625.627 5.243 5.243 0 0 0 5.022-2.051.75.75 0 1 0-1.202-.897 3.744 3.744 0 0 1-3.008 1.51c0-1.23.592-2.323 1.51-3.008Z" />
+        </svg>
+
+        <h2 class="text-4xl text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">Simple Sidebar Widget
+        </h2>
+        <p class="max-w-md md:max-w-2xl lg:max-w-7xl mt-5 mx-auto text-xl text-gray-500">The AirLyft Widget
+          allows you to create
+          onboarding flows, run quests, and campaigns easily on your own domain.</p>
       </div>
     </div>
+    <DemoSteps />
   </div>
 </template>
+
+<style>
+.bg-purple-custom {
+  background-color: hsl(270 100% 97%);
+}
+</style>
 
 <script setup>
 useHead({
