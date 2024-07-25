@@ -1,5 +1,12 @@
 <template>
-    <div class="bg-white w-[90%] xl:w-[75%] 2xl:w-[60%] mx-auto rounded-lg p-10 lg:p-20">
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="text-center mt-10">
+            <img src="../public/rocket-launch-solid.svg" alt="" class="w-16 lg:w-24 mx-auto my-5">
+            <h2 class="text-4xl text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">{{ title }}</h2>
+            <p class="max-w-md md:max-w-2xl lg:max-w-7xl mt-5 mx-auto text-xl text-gray-500">{{ description }}</p>
+        </div>
+    </div>
+    <div class="bg-white w-[90%] xl:w-[80%] 3xl:w-[60%] mx-auto rounded-lg p-10 lg:p-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div class="text-gray-600 text-center lg:text-left mx-auto">
                 <h3 class="text-2xl sm:text-3xl sm:tracking-tight lg:text-4xl font-light uppercase">Embed Tools</h3>
@@ -50,6 +57,18 @@
 
 <script setup>
 import { CodeBracketIcon, DocumentDuplicateIcon, RocketLaunchIcon, } from '@heroicons/vue/24/outline'
+import { defineProps } from 'vue';
+
+const props = defineProps({
+    title: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+        required: true,
+    },
+})
 
 const steps = [
     {
