@@ -1,64 +1,71 @@
 <template>
-    <div class="bg-indigo-950 py-12 sm:py-16 mx-auto">
+    <div class="py-12 sm:py-16 mx-auto">
         <div class="px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-white
+            <div class="mx-auto max-w-xs lg:mx-0 border-b pb-5 text-center lg:text-left">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-800
                  sm:text-4xl">Sidebar Widgets</h2>
             </div>
             <div
-                class="mx-auto mt-5 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 border-t border-gray-200 pt-5 sm:pt-5 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                <article v-for="sidebar in sidebar" :key="sidebar.name"
-                    class="flex max-w-xl flex-col items-start justify-between bg-indigo-800 hover:bg-indigo-700 p-10 rounded-md text-center text-white shadow-lg">
+                class="mt-5">
+                <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                <li v-for="sidebar in sidebar" :key="sidebar.name"
+                    class="col-span-1 flex flex-col text-center bg-purple-card border rounded-md text-gray-600 shadow-xl mx-auto">
                     <NuxtLink :to="sidebar.href">
-                        <div class="flex justify-center items-center flex-col space-y-4">
-                            <div class="w-10 ">
-                                <component :is="sidebar.icon" />
-                            </div>
-                            <span class="text-xl font-semibold dark:text-light">
-                                {{ sidebar.name }}
-                            </span>
-                            <div class="text-gray-300">
-                                {{ sidebar.description }}
-                            </div>
+                        <div class="flex-1 flex flex-col p-8">
+                            <component :is="sidebar.icon" class="w-12 mx-auto" />
+                            <h3 class="mt-6 text-xl font-semibold">{{ sidebar.name }}</h3>
+                            <p class="text-gray-500 text-md mt-5 max-w-sm lg:max-w-xl">{{ sidebar.description }}</p>
                         </div>
                     </NuxtLink>
-                </article>
+                </li>
+            </ul>
             </div>
         </div>
 
         <div class="px-6 lg:px-8 mt-10">
-            <div class="mx-auto max-w-2xl lg:mx-0">
-                <h2 class="text-3xl font-bold tracking-tight text-white
+            <div class="mx-auto max-w-xs lg:mx-0 border-b pb-5 text-center lg:text-left">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-800
                  sm:text-4xl">Popup Widgets</h2>
             </div>
             <div
-                class="mx-auto mt-5 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-8 border-t border-gray-200 pt-5 sm:pt-5 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-                <article v-for="popup in popup" :key="popup.name"
-                    class="flex max-w-xl flex-col items-start justify-between bg-indigo-800 hover:bg-indigo-700 p-10 rounded-md text-center text-white shadow-lg">
+                class="mt-5">
+                <ul role="list" class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
+                <li v-for="popup in popup" :key="popup.name"
+                    class="col-span-1 flex flex-col text-center bg-purple-card border rounded-md text-gray-600 shadow-xl mx-auto">
                     <NuxtLink :to="popup.href">
-                        <div class="flex justify-center items-center flex-col space-y-4">
-                            <div class="w-10 ">
-                                <component :is="popup.icon" />
-                            </div>
-                            <span class="text-xl font-semibold dark:text-light">
-                                {{ popup.name }}
-                            </span>
-                            <div class="text-gray-300">
-                                {{ popup.description }}
-                            </div>
+                        <div class="flex-1 flex flex-col p-8">
+                            <component :is="popup.icon" class="w-12 mx-auto" />
+                            <h3 class="mt-6 text-xl font-semibold">{{ popup.name }}</h3>
+                            <p class="text-gray-500 text-md mt-5 max-w-sm lg:max-w-xl">{{ popup.description }}</p>
                         </div>
                     </NuxtLink>
-                </article>
+                </li>
+            </ul>
             </div>
         </div>
     </div>
 </template>
 
+<style>
+.bg-purple-card{
+  background-color: hsl(269.2, 50%, 97%);
+}
+
+.border{
+    border-color: hsl(269.2, 50%, 50%);
+    border-width: 1px;
+}
+
+.border-b{
+    border-color: gray;
+}
+</style>
+
 <script setup>
 import {
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  SquaresPlusIcon,
+    ChartPieIcon,
+    CursorArrowRaysIcon,
+    SquaresPlusIcon,
 } from '@heroicons/vue/24/outline'
 
 const sidebar = [
@@ -67,21 +74,21 @@ const sidebar = [
         icon: ChartPieIcon,
         href: '/sidebar/simple',
         description:
-            'A short description about the Simple Sidebar Widget',
+            'Effortlessly integrate a customizable sidebar widget with a single button click for seamless user onboarding',
     },
     {
         name: 'Open Quest Directly',
         icon: CursorArrowRaysIcon,
         href: '/sidebar/open-quest-directly',
         description:
-            'A short description about the Open Quest Directly Widget',
+            'Launch specific quests instantly in a sidebar widget, enhancing user engagement and streamlining onboarding flows',
     },
     {
         name: 'Async Script Load',
         icon: SquaresPlusIcon,
         href: '/sidebar/async-script-load',
         description:
-            'A short description about the Async Script Load Widget',
+            'Boost website performance with an asynchronously loaded sidebar widget for smooth, uninterrupted user experiences',
     },
     // {
     //     name: 'Hide XP and cFuel',
@@ -97,21 +104,21 @@ const popup = [
         icon: ChartPieIcon,
         href: '/popup/simple',
         description:
-            'A short description about the Simple Popup Widget',
+            'Engage users with a versatile popup widget, easily activated through a button for dynamic onboarding campaigns',
     },
     {
         name: 'Open Quest Directly',
         icon: CursorArrowRaysIcon,
         href: '/popup/open-quest-directly',
         description:
-            'A short description about the Open Quest Directly Widget',
+            'Trigger targeted quests in a popup modal, optimizing user interaction and increasing conversion rates',
     },
     {
         name: 'Async Script Load',
         icon: SquaresPlusIcon,
         href: '/popup/async-script-load',
         description:
-            'A short description about the Async Script Load Widget',
+            'Maximize site speed and user satisfaction with an asynchronously loaded popup widget for efficient onboarding',
     },
     // {
     //     name: 'Hide XP and cFuel',

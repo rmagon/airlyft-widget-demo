@@ -1,0 +1,46 @@
+<svg width="1940" height="900" viewBox="0 0 1940 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1940" height="900" rx="8" fill="#FCFCFC"/>
+<rect x="35.5" y="32.5" width="1869" height="835" rx="10.5" stroke="#62CCB3" stroke-width="5"/>
+<rect x="152.5" y="123.5" width="703" height="653" rx="7.5" fill="white" stroke="#333333"/>
+<rect x="647" y="692" width="168" height="44" rx="22" fill="#62CCB3" stroke="#666666" stroke-width="2"/>
+<line x1="152" y1="202.5" x2="856.001" y2="202.5" stroke="#333333"/>
+<circle cx="796" cy="163" r="20" fill="#DEEBF3"/>
+<rect x="192" y="153" width="450" height="20" rx="10" fill="#DEEBF3"/>
+<rect x="192" y="263" width="300" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="192" y="423" width="502" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="192" y="583" width="600" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="192" y="503" width="280" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="492" y="503" width="240" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="192" y="343" width="150" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="362" y="343" width="200" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="582" y="343" width="160" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1084.5" y="123.5" width="703" height="653" rx="7.5" fill="white" stroke="#333333"/>
+<line x1="1084" y1="202.5" x2="1788" y2="202.5" stroke="#333333"/>
+<circle cx="1728" cy="163" r="20" fill="#DEEBF3"/>
+<rect x="1124" y="153" width="450" height="20" rx="10" fill="#DEEBF3"/>
+<rect x="1124" y="263" width="162" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="363" width="271.08" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="563" width="271.08" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="463" width="324" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="663" width="324" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="413" width="151.2" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="613" width="151.2" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1285.2" y="413" width="129.6" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1285.2" y="613" width="129.6" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="313" width="81" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1124" y="513" width="81" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1215" y="313" width="108" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1215" y="513" width="108" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1333" y="313" width="86.4" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1333" y="513" width="86.4" height="20" rx="10" fill="#EEEEEE"/>
+<rect x="1489" y="203" width="298" height="573" fill="#F7F5F5" stroke="#8E86E0" stroke-width="2"/>
+<line x1="1488" y1="239" x2="1788" y2="239" stroke="#8E86E0" stroke-width="2"/>
+<circle cx="1762" cy="221" r="9.5" fill="white" stroke="#AAAAAA"/>
+<path d="M1765.36 223.486C1765.6 223.731 1765.6 224.111 1765.36 224.356C1765.23 224.478 1765.08 224.533 1764.92 224.533C1764.76 224.533 1764.61 224.478 1764.49 224.356L1762 221.87L1759.51 224.356C1759.39 224.478 1759.24 224.533 1759.08 224.533C1758.92 224.533 1758.77 224.478 1758.64 224.356C1758.4 224.111 1758.4 223.731 1758.64 223.486L1761.13 221L1758.64 218.514C1758.4 218.269 1758.4 217.889 1758.64 217.644C1758.89 217.399 1759.27 217.399 1759.51 217.644L1762 220.13L1764.49 217.644C1764.73 217.399 1765.11 217.399 1765.36 217.644C1765.6 217.889 1765.6 218.269 1765.36 218.514L1762.87 221L1765.36 223.486Z" fill="#AAAAAA"/>
+<rect x="1508" y="270" width="260" height="84" rx="4" fill="#D9D9D9"/>
+<rect x="1508" y="374" width="260" height="84" rx="4" fill="#D9D9D9"/>
+<rect x="1508" y="478" width="260" height="84" rx="4" fill="#D9D9D9"/>
+<rect x="1508" y="582" width="260" height="84" rx="4" fill="#D9D9D9"/>
+<path d="M900 458C897.239 458 895 460.239 895 463C895 465.761 897.239 468 900 468V458ZM1040 463L990 434.132V491.868L1040 463ZM900 468H995V458H900V468Z" fill="#AAAAAA"/>
+<path d="M839.943 786.478C840.919 787.455 842.502 787.455 843.478 786.478C844.455 785.502 844.455 783.919 843.478 782.943L839.943 786.478ZM771 711.5C769.619 711.5 768.5 712.619 768.5 714V736.5C768.5 737.881 769.619 739 771 739C772.381 739 773.5 737.881 773.5 736.5V716.5H793.5C794.881 716.5 796 715.381 796 714C796 712.619 794.881 711.5 793.5 711.5H771ZM843.478 782.943L772.768 712.232L769.232 715.768L839.943 786.478L843.478 782.943Z" fill="#333333"/>
+</svg>
