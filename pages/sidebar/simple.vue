@@ -1,6 +1,6 @@
 <template>
   <div class="bg-purple-custom">
-    <DemoSteps :title="pageTitle" :description="pageDescription" />
+    <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
   </div>
 </template>
 
@@ -16,7 +16,8 @@ useHead({
 })
 
 const pageTitle = 'Simple Sidebar'
-const pageDescription = 'The AirLyft Widget allows you to create onboarding flows, run quests, and campaigns easily on your own website.'
+const pageDescription = 'Effortlessly integrate a customizable sidebar widget with a single button click for seamless user onboarding'
+const svg = '/sidebar-demo.svg'
 </script>
 
 <script>

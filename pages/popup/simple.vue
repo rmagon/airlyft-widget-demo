@@ -1,6 +1,6 @@
 <template>
   <div class="bg-cyan-custom">
-    <DemoSteps :title="pageTitle" :description="pageDescription" />
+    <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
   </div>
 </template>
 
@@ -16,7 +16,8 @@ useHead({
 })
 
 const pageTitle = 'Simple Popup'
-const pageDescription = 'The AirLyft Widget allows you to create onboarding flows, run quests, and campaigns easily on your own website.'
+const pageDescription = 'Engage users with a versatile popup widget, easily activated through a button for dynamic onboarding campaigns'
+const svg = '/popup-demo.svg'
 </script>
 
 <script>

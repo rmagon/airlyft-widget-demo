@@ -15,7 +15,7 @@
                 <p class="max-w-lg text-lg mt-5 lg:mt-10 font-extralight">AirLyft Widgets are fully customisable &
                     embeddable, you can install them on any web page in a couple of minutes.</p>
             </div>
-            <img src="../public/widget-demo.svg" alt="" class="rounded-md mx-auto">
+            <img :src="svgPath" alt="Demo Image" class="rounded-md mx-auto">
         </div>
         <div class="relative inset-0 flex items-center mt-10" aria-hidden="true">
             <div class="w-full border-t border-gray-300" />
@@ -57,7 +57,7 @@
 
 <script setup>
 import { CodeBracketIcon, DocumentDuplicateIcon, RocketLaunchIcon, } from '@heroicons/vue/24/outline'
-import { defineProps } from 'vue';
+import { defineProps, onMounted, ref } from 'vue';
 
 const props = defineProps({
     title: {
@@ -65,6 +65,10 @@ const props = defineProps({
         required: true,
     },
     description: {
+        type: String,
+        required: true,
+    },
+    svgPath: {
         type: String,
         required: true,
     },

@@ -1,6 +1,6 @@
 <template>
   <div class="bg-fuchsia-custom">
-    <DemoSteps :title="pageTitle" :description="pageDescription" />
+    <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
   </div>
 </template>
 
@@ -16,7 +16,8 @@ useHead({
 })
 
 const pageTitle = 'Open Quest Directly'
-const pageDescription = 'The AirLyft Widget allows you to create onboarding flows, run quests, and campaigns easily on your own website.'
+const pageDescription = 'Launch specific quests instantly in a sidebar widget, enhancing user engagement and streamlining onboarding flows'
+const svg = '/sidebar-demo.svg'
 </script>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div class="bg-blue-custom">
-        <DemoSteps :title="pageTitle" :description="pageDescription" />
+        <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
     </div>
 </template>
 
@@ -16,7 +16,8 @@ useHead({
 })
 
 const pageTitle = 'Async Script Load'
-const pageDescription = 'The AirLyft Widget allows you to create onboarding flows, run quests, and campaigns easily on your own website.'
+const pageDescription = 'Maximize site speed and user satisfaction with an asynchronously loaded popup widget for efficient onboarding'
+const svg = '/popup-demo.svg'
 </script>
 
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div class="bg-violet-custom">
-        <DemoSteps :title="pageTitle" :description="pageDescription" />
+        <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
     </div>
 </template>
 
@@ -16,7 +16,8 @@ useHead({
 })
 
 const pageTitle = 'Async Script Load'
-const pageDescription = 'The AirLyft Widget allows you to create onboarding flows, run quests, and campaigns easily on your own website.'
+const pageDescription = 'Boost website performance with an asynchronously loaded sidebar widget for smooth, uninterrupted user experiences'
+const svg = '/sidebar-demo.svg'
 </script>
 
 <script>
