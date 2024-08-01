@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-cyan-custom">
+  <div class="bg-emerald-custom">
     <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
   </div>
 </template>
 
 <style>
-.bg-cyan-custom {
-  background-color: hsl(187.9 100% 97%);
+.bg-emerald-custom {
+  background-color: hsl(158.1 100% 97%);
 }
 </style>
 
@@ -36,7 +36,7 @@ export default {
       script.src = 'https://assets.airlyft.one/widget/widget.js';
       script.onload = async () => {
         try {
-          const widget = await window.AirlyftWidget("b26a2bd2-3f6b-4d9b-b582-bd1fc773704c");
+          const widget = await window.AirlyftWidget("022c8d74-3e34-4a81-ad2c-1e91f279de55");
           const instance = await widget.createModal({});
 
           initializeWidgetInstance(instance);

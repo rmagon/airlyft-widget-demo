@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-blue-custom">
+    <div class="bg-orange-custom">
         <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
     </div>
 </template>
 
 <style>
-.bg-blue-custom {
-    background-color: hsl(213.1 100% 97%);
+.bg-orange-custom {
+    background-color: hsl(27 100% 97%);
 }
 </style>
 
@@ -43,7 +43,7 @@ export default {
         async initAirlyft() {
             try {
                 const widget = await window.AirlyftWidget(
-                    "aac9db6e-297e-4e4a-90fb-4d0fdf98aa56"
+                    "de9e960a-bb2e-401c-a4fe-1362f5a70b46"
                 );
                 const instance = await widget.createModal({});
 

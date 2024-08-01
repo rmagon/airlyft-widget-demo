@@ -36,7 +36,7 @@ export default {
       script.src = 'https://assets.airlyft.one/widget/widget.js';
       script.onload = async () => {
         try {
-          const widget = await window.AirlyftWidget("96affc32-6ce0-4654-b406-03a76bd75bd6");
+          const widget = await window.AirlyftWidget("239a94df-cd80-4083-a957-696d1eec7690");
           const instance = await widget.createSidebar({});
 
           initializeWidgetInstance(instance);
