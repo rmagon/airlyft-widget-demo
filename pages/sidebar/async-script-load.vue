@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-violet-custom">
+    <div class="bg-blue-custom">
         <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
     </div>
 </template>
 
 <style>
-.bg-violet-custom {
-    background-color: hsl(255.1 100% 97%);
+.bg-blue-custom {
+    background-color: hsl(221.2 100% 97%);
 }
 </style>
 
@@ -43,7 +43,7 @@ export default {
         async initAirlyft() {
             try {
                 const widget = await window.AirlyftWidget(
-                    "ca7fbce4-e349-4074-a8c6-091d102a3447"
+                    "2c2657de-3b72-458d-ba81-20c638fe55c1"
                 );
                 const instance = await widget.createSidebar({});
 

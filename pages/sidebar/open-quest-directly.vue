@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-fuchsia-custom">
+  <div class="bg-rose-custom">
     <DemoSteps :title="pageTitle" :description="pageDescription" :svgPath="svg" />
   </div>
 </template>
 
 <style>
-.bg-fuchsia-custom {
-  background-color: hsl(292 100% 97%);
+.bg-rose-custom {
+  background-color: hsl(351.3 100% 97%);
 }
 </style>
 
@@ -37,11 +37,11 @@ export default {
       script.onload = async () => {
         try {
           const widget = await window.AirlyftWidget(
-            "a487e284-dac3-4801-bd11-4bfdcb9413c9"
+            "e47a2016-4171-436b-bf55-dc52da22d129"
           );
           const instance = await widget.createSidebar({});
           initializeWidgetInstance(instance);
-          widget.openSpecificTask(instance, "38657521-db0c-430a-9450-1b52f38e2ca2");
+          widget.openSpecificTask(instance, "af3cf3bd-b818-4912-bd0f-a38efd75cbe7");
         } catch (err) {
           console.error(err);
         }
