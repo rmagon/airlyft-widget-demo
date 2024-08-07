@@ -91,17 +91,49 @@
     </div>
   </div>
 
-  <div class="bg-white">
+  <div class="bg-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+        <div class="lg:flex lg:items-center max-w-xs mx-auto lg:mx-0">
+          <img src="../public/support-illustration.svg" alt="Support Illustration" />
+        </div>
+        <div class="lg:mt-0 lg:flex lg:items-center">
+          <div class="text-center lg:text-left">
+            <h2 class="text-3xl font-light text-gray-900 sm:text-4xl">
+              Have questions on Embed Widget?
+            </h2>
+            <p class="mt-4 text-lg font-light leading-6 text-gray-500">
+              Looking for embedding AirLyft widget onto your platform? Team AirLyft on your service here, drop us an
+              email at
+              <a href="mailto:team@airlyft.one" class="text-blue-500 hover:underline">
+                support@canumeet.com
+              </a> or message us on <a href="https://t.me/cbscrypt" target="_blank"
+                class="text-blue-500 hover:underline">Telegram</a>
+              for assistance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-gray-50">
     <div class="max-w-7xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
       <h2 class="text-3xl font-light tracking-tight text-gray-900 sm:text-4xl">
         Start using AirLyft Widget now
       </h2>
       <div class="mt-8 flex justify-center gap-x-5">
         <div class="inline-flex">
-          <NuxtLink to="/demo" class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700"> View Demo </NuxtLink>
+          <NuxtLink to="/demo"
+            class="flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700">
+            View Demo </NuxtLink>
         </div>
         <div class="ml-3 inline-flex">
-          <a href="https://docs.airlyft.one/developers/widget/" target="_blank" class="flex items-center justify-center gap-x-3 px-5 py-3 border border-transparent text-base font-medium rounded-full text-indigo-700 bg-indigo-100 hover:bg-indigo-200"> Docs <ArrowUpRightIcon class="w-5" /> </a>
+          <a href="https://docs.airlyft.one/developers/widget/" target="_blank"
+            class="flex items-center justify-center gap-x-3 px-5 py-3 border border-transparent text-base font-medium rounded-full text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+            Docs
+            <ArrowUpRightIcon class="w-5" />
+          </a>
         </div>
       </div>
     </div>
