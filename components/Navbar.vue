@@ -1,6 +1,6 @@
 <template>
   <header class="bg-inherit z-10 fixed text-white backdrop-blur-sm">
-    <nav class="mx-auto w-dvw flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="mx-auto w-dvw flex items-center justify-between p-6 lg:px-12" aria-label="Global">
       <div class="flex lg:flex-1">
         <NuxtLink to="/" class="-m-1.5 p-1.5">
           <span class="sr-only">AirLyft.One</span>
@@ -16,7 +16,8 @@
       </div>
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
         <Popover class="relative" v-slot="{ open, close }">
-          <PopoverButton :class="[open ? 'text-gray-900' : '', 'flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none text-gray-600 hover:text-gray-950', {'text-gray-900': isRouteActive('/sidebar')}]">
+          <PopoverButton
+            :class="[open ? 'text-gray-900' : '', 'flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none text-gray-600 hover:text-gray-950', { 'text-gray-900': isRouteActive('/demo/sidebar') }]">
             Sidebar
             <ChevronDownIcon
               :class="[open ? 'rotate-180 ease-out duration-200' : 'ease-out duration-200', 'h-5 w-5 flex-none']"
@@ -50,7 +51,8 @@
         </Popover>
 
         <Popover class="relative" v-slot="{ open, close }">
-          <PopoverButton :class="[open ? 'text-gray-900' : '', 'flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none text-gray-600 hover:text-gray-950', {'text-gray-900': isRouteActive('/popup')}]">
+          <PopoverButton
+            :class="[open ? 'text-gray-900' : '', 'flex items-center gap-x-1 text-sm font-semibold leading-6 focus-visible:outline-none text-gray-600 hover:text-gray-950', { 'text-gray-900': isRouteActive('/demo/popup') }]">
             Popup
             <ChevronDownIcon
               :class="[open ? 'rotate-180 ease-out duration-200' : 'ease-out duration-200', 'h-5 w-5 flex-none']"
@@ -119,6 +121,11 @@
           </transition>
         </Popover>
       </PopoverGroup>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end" v-if="!$route.path.includes('/demo')">
+        <NuxtLink to="/demo"
+          class="text-sm font-semibold px-5 py-2 border border-transparent rounded-full text-white bg-indigo-600">Demo
+        </NuxtLink>
+      </div>
     </nav>
     <Dialog class="lg:hidden" @close="mobileMenuOpen = false" :open="mobileMenuOpen">
       <div class="fixed inset-0 z-10" />
@@ -183,7 +190,6 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
 import {
   Dialog,
   DialogPanel,
@@ -197,10 +203,10 @@ import {
 } from '@headlessui/vue'
 import {
   Bars3Icon,
-  ChartPieIcon,
+  RectangleStackIcon,
   CursorArrowRaysIcon,
   FingerPrintIcon,
-  SquaresPlusIcon,
+  ClockIcon,
   XMarkIcon,
 } from '@heroicons/vue/24/outline'
 import { ChevronDownIcon } from '@heroicons/vue/20/solid'
@@ -208,27 +214,27 @@ import { ChevronDownIcon } from '@heroicons/vue/20/solid'
 const route = useRoute()
 
 const sidebar = [
-  { name: 'Simple Sidebar', description: 'Effortlessly integrate a customizable sidebar widget with a single button click for seamless user onboarding', href: '/sidebar/simple', icon: ChartPieIcon },
-  { name: 'Open Quest Directly', description: 'Launch specific quests instantly in a sidebar widget, enhancing user engagement and streamlining onboarding flows', href: '/sidebar/open-quest-directly', icon: CursorArrowRaysIcon },
-  { name: 'Async Script Load', description: 'Boost website performance with an asynchronously loaded sidebar widget for smooth, uninterrupted user experiences', href: '/sidebar/async-script-load', icon: SquaresPlusIcon },
-  // { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '/sidebar/hide-xp-cfuel', icon: FingerPrintIcon },
-  // { name: 'Silent Login', description: 'Description about silent login', href: '/sidebar/silent-login', icon: FingerPrintIcon },
+  { name: 'Simple Sidebar', description: 'Effortlessly integrate a customizable sidebar widget with a single button click for seamless user onboarding', href: '/demo/sidebar/simple', icon: RectangleStackIcon },
+  { name: 'Open Quest Directly', description: 'Launch specific quests instantly in a sidebar widget, enhancing user engagement and streamlining onboarding flows', href: '/demo/sidebar/open-quest-directly', icon: CursorArrowRaysIcon },
+  { name: 'Async Script Load', description: 'Boost website performance with an asynchronously loaded sidebar widget for smooth, uninterrupted user experiences', href: '/demo/sidebar/async-script-load', icon: ClockIcon },
+  // { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '/demo/sidebar/hide-xp-cfuel', icon: FingerPrintIcon },
+  // { name: 'Silent Login', description: 'Description about silent login', href: '/demo/sidebar/silent-login', icon: FingerPrintIcon },
 ]
 
 const popup = [
-  { name: 'Simple Popup', description: 'Engage users with a versatile popup widget, easily activated through a button for dynamic onboarding campaigns', href: '/popup/simple', icon: ChartPieIcon },
-  { name: 'Open Quest Directly', description: 'Trigger targeted quests in a popup modal, optimizing user interaction and increasing conversion rates', href: '/popup/open-quest-directly', icon: CursorArrowRaysIcon },
-  { name: 'Async Script Load', description: 'Maximize site speed and user satisfaction with an asynchronously loaded popup widget for efficient onboarding', href: '/popup/async-script-load', icon: SquaresPlusIcon },
-  // { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '/popup/hide-xp-cfuel', icon: FingerPrintIcon },
-  // { name: 'Silent Login', description: 'Description about silent login', href: '/popup/silent-login', icon: FingerPrintIcon },
+  { name: 'Simple Popup', description: 'Engage users with a versatile popup widget, easily activated through a button for dynamic onboarding campaigns', href: '/demo/popup/simple', icon: RectangleStackIcon },
+  { name: 'Open Quest Directly', description: 'Trigger targeted quests in a popup modal, optimizing user interaction and increasing conversion rates', href: '/demo/popup/open-quest-directly', icon: CursorArrowRaysIcon },
+  { name: 'Async Script Load', description: 'Maximize site speed and user satisfaction with an asynchronously loaded popup widget for efficient onboarding', href: '/demo/popup/async-script-load', icon: ClockIcon },
+  // { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '/demo/popup/hide-xp-cfuel', icon: FingerPrintIcon },
+  // { name: 'Silent Login', description: 'Description about silent login', href: '/demo/popup/silent-login', icon: FingerPrintIcon },
 ]
 
 const inline = [
-  { name: 'Simple Inline', description: 'Description about simple inline', href: '/inline/simple', icon: ChartPieIcon },
+  { name: 'Simple Inline', description: 'Description about simple inline', href: '/demo/inline/simple', icon: RectangleStackIcon },
   { name: 'Open Quest Directly', description: 'Description about open quest directly', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Async Script Load', description: 'Description about async script load', href: '#', icon: SquaresPlusIcon },
+  { name: 'Async Script Load', description: 'Description about async script load', href: '#', icon: ClockIcon },
   { name: 'Hide XP and cFuel', description: 'Description about hide XP and cFuel', href: '#', icon: FingerPrintIcon },
-  { name: 'Silent Login', description: 'Description about silent login', href: '/inline/silent-login', icon: FingerPrintIcon },
+  { name: 'Silent Login', description: 'Description about silent login', href: '/demo/inline/silent-login', icon: FingerPrintIcon },
 ]
 
 const isRouteActive = (baseRoute) => route.path.startsWith(baseRoute)
