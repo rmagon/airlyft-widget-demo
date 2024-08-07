@@ -63,36 +63,36 @@
 
 <script setup>
 import {
-    ChartPieIcon,
+    RectangleStackIcon,
     CursorArrowRaysIcon,
-    SquaresPlusIcon,
+    ClockIcon,
 } from '@heroicons/vue/24/outline'
 
 const sidebar = [
     {
         name: 'Simple Sidebar',
-        icon: ChartPieIcon,
-        href: '/sidebar/simple',
+        icon: RectangleStackIcon,
+        href: '/demo/sidebar/simple',
         description:
             'Effortlessly integrate a customizable sidebar widget with a single button click for seamless user onboarding',
     },
     {
         name: 'Open Quest Directly',
         icon: CursorArrowRaysIcon,
-        href: '/sidebar/open-quest-directly',
+        href: '/demo/sidebar/open-quest-directly',
         description:
             'Launch specific quests instantly in a sidebar widget, enhancing user engagement and streamlining onboarding flows',
     },
     {
         name: 'Async Script Load',
-        icon: SquaresPlusIcon,
-        href: '/sidebar/async-script-load',
+        icon: ClockIcon,
+        href: '/demo/sidebar/async-script-load',
         description:
             'Boost website performance with an asynchronously loaded sidebar widget for smooth, uninterrupted user experiences',
     },
     // {
     //     name: 'Hide XP and cFuel',
-    //     href: '/sidebar/hide-xp-cfuel',
+    //     href: '/demo/sidebar/hide-xp-cfuel',
     //     description:
     //         'A short description about the Hide XP and cFuel Widget',
     // },
@@ -101,28 +101,28 @@ const sidebar = [
 const popup = [
     {
         name: 'Simple Popup',
-        icon: ChartPieIcon,
-        href: '/popup/simple',
+        icon: RectangleStackIcon,
+        href: '/demo/popup/simple',
         description:
             'Engage users with a versatile popup widget, easily activated through a button for dynamic onboarding campaigns',
     },
     {
         name: 'Open Quest Directly',
         icon: CursorArrowRaysIcon,
-        href: '/popup/open-quest-directly',
+        href: '/demo/popup/open-quest-directly',
         description:
             'Trigger targeted quests in a popup modal, optimizing user interaction and increasing conversion rates',
     },
     {
         name: 'Async Script Load',
-        icon: SquaresPlusIcon,
-        href: '/popup/async-script-load',
+        icon: ClockIcon,
+        href: '/demo/popup/async-script-load',
         description:
             'Maximize site speed and user satisfaction with an asynchronously loaded popup widget for efficient onboarding',
     },
     // {
     //     name: 'Hide XP and cFuel',
-    //     href: '/popup/hide-xp-cfuel',
+    //     href: '/demo/popup/hide-xp-cfuel',
     //     description:
     //         'A short description about the Hide XP and cFuel Widget',
     // },
