@@ -12,17 +12,8 @@
                         </h1>
                         <p
                             class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                            Click
-                            the button below to learn how to integrate widgets in your project.</p>
-                    </div>
-                    <div class="mt-12 flex">
-                        <div class="mt-4 mx-auto sm:mt-0">
-                            <a href="https://docs.airlyft.one/developers/widget" target="_blank"
-                                class="flex items-center justify-center gap-x-3 rounded-md border border-transparent px-5 py-3 bg-indigo-600 text-base font-medium text-white shadow hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:px-10">Get
-                                started
-                                <BookOpenIcon class="h-6" />
-                            </a>
-                        </div>
+                            Click on the cards below to explore the different kinds of widget you can add to your
+                            website.</p>
                     </div>
                 </div>
             </div>
