@@ -106,7 +106,7 @@
               Looking for embedding AirLyft widget onto your platform? Team AirLyft on your service here, drop us an
               email at
               <a href="mailto:team@airlyft.one" class="text-blue-500 hover:underline">
-                support@canumeet.com
+                team@airlyft.one
               </a> or message us on <a href="https://t.me/cbscrypt" target="_blank"
                 class="text-blue-500 hover:underline">Telegram</a>
               for assistance.
